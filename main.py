@@ -349,10 +349,10 @@ def run_full_analysis(
         if merge_notification and (results or market_report) and not args.no_notify:
             parts = []
             if market_report:
-                parts.append(f"# 📈 信号提醒：大盘复盘\n\n{market_report}")
+                parts.append(f"# 📈 大盘复盘\n\n{market_report}")
             if results:
                 dashboard_content = pipeline.notifier.generate_dashboard_report(results)
-                parts.append(f"# 🚀 信号提醒：个股决策仪表盘\n\n{dashboard_content}")
+                parts.append(f"# 🚀 个股决策仪表盘\n\n{dashboard_content}")
             if parts:
                 combined_content = "\n\n---\n\n".join(parts)
                 if pipeline.notifier.is_available():
